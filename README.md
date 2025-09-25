@@ -4,17 +4,19 @@ A deep learning project for **Virtual Try-On** using **Fashion-MNIST** and **Vit
 This repository includes data preprocessing, model training, inference, evaluation, and visualization of generated outputs.
 
 ---
-
 ## Project Report
 [Project Report.pdf](https://github.com/user-attachments/files/22536992/Project.Report.pdf)
 
 ## Table of Contents
 - [Project Overview](#project-overview)
-- [Dataset](#dataset)
+- [Dataset Used and Why](#dataset-used-and-why)
+- [Model Architecture and Reasoning](#model-architecture-and-reasoning)
+- [Training Setup & Server Details](#training-setup--server-details)
+- [Accuracy / Metrics Achieved](#accuracy--metrics-achieved)
+- [Visual Examples](#visual-examples)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Folder Structure](#folder-structure)
-- [Evaluation Metrics](#evaluation-metrics)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -31,11 +33,50 @@ The Virtual Try-On system implemented in this project can:
 
 ---
 
-## Dataset
-- **Fashion-MNIST**: Training and testing CSV files located in `data/raw/viton_hd/`.  
-- **Viton-HD**: High-resolution images used for virtual try-on experiments.  
+## Dataset Used and Why
+- **Fashion-MNIST**: Used for initial experiments due to its simplicity and availability.  
+- **Viton-HD**: High-resolution dataset of real clothing and human images for accurate try-on results.  
 
-> **Note:** Large dataset files (>100 MB) are not included due to GitHub limits. Please download them separately and place them in `data/raw/viton_hd/`.
+> These datasets provide both variety and high-quality images, which are essential for realistic virtual try-on.
+
+---
+
+## Model Architecture and Reasoning
+- **VITON Baseline**: Standard virtual try-on architecture for basic garment transfer.  
+- **HR-VTON**: High-resolution model to improve texture, details, and alignment for realistic results.  
+
+> Models were chosen to balance performance and generation quality while supporting both low- and high-resolution images.
+
+---
+
+## Training Setup & Server Details
+- **Environment**: Python 3.10, PyTorch 2.x  
+- **GPU**: NVIDIA RTX 3090 / CUDA 11.x  
+- **Training Hyperparameters**:  
+  - Batch size: 8–16  
+  - Learning rate: 0.0001  
+  - Epochs: 50–100  
+- **Data preprocessing**: Images resized to 256×256, normalized, and masks/keypoints extracted.  
+
+---
+
+## Accuracy / Metrics Achieved
+- **SSIM**: Structural Similarity Index (measures similarity between generated and ground truth images)  
+- **LPIPS**: Learned Perceptual Image Patch Similarity (perceptual similarity)  
+- **FID**: Fréchet Inception Distance (distribution distance between generated and real images)  
+
+> Metrics are stored in `outputs/metrics.json`.
+
+---
+
+## Visual Examples
+**Input Image + Generated Try-On Output**:
+
+| Front Page | Result Page |
+|-------------|-----------------|
+| <img width="1366" height="768" alt="Screenshot (1194)" src="https://github.com/user-attachments/assets/fd6b09af-30e5-40b7-927d-5f58f00e3223" /> | <img width="1366" height="768" alt="Screenshot (1195)" src="https://github.com/user-attachments/assets/3078939a-0130-4d9a-8dfd-7f17b9e22bc9" /> |
+
+> Replace the images with your own example files in `static/uploads/` and `outputs/inference_samples/`.
 
 ---
 
@@ -69,7 +110,6 @@ git lfs pull
 ---
 
 ## Usage
-
 ### Data Preprocessing
 ```bash
 python src/data_preprocessing.py
@@ -99,59 +139,17 @@ python src/evaluation.py --generated outputs/inference_samples/ --ground_truth d
 ```
 virtual-tryon-project/
 ├── data/
-│   ├── raw/
-│   │   ├── viton_hd/
-│   │   │   ├── fashion_mnist_train.csv
-│   │   │   ├── fashion_mnist_test.csv
-│   │   └── README.md
-│   ├── processed/
-│   │   ├── images/
-│   │   │   ├── train/0/, 1/, ...
-│   │   │   ├── test/0/, 1/, ...
-│   │   ├── masks/
-│   │   ├── keypoints/
-│   │   └── splits/
-│   └── README.md
 ├── models/
-│   ├── checkpoints/
-│   ├── viton_baseline.pth
-│   └── hr_vton_experiment1.pth
 ├── outputs/
-│   ├── inference_samples/
-│   ├── metrics.json
-│   └── logs/
 ├── src/
-│   ├── data_preprocessing.py
-│   ├── dataset.py
-│   ├── model_viton.py
-│   ├── train.py
-│   ├── inference.py
-│   ├── evaluation.py
-│   └── utils.py
 ├── templates/
-│   ├── index.html
-│   └── result.html
 ├── static/
-│   ├── uploads/
-│   └── styles.css
 ├── notebooks/
-│   ├── data_exploration.ipynb
-│   ├── training_experiments.ipynb
-│   └── inference_demo.ipynb
 ├── reports/
-│   ├── case_study_report.pdf
-│   └── presentation_slides.pptx
 ├── requirements.txt
 ├── README.md
 └── .gitignore
 ```
-
----
-
-## Evaluation Metrics
-- **SSIM**: Structural Similarity Index  
-- **LPIPS**: Learned Perceptual Image Patch Similarity  
-- **FID**: Fréchet Inception Distance  
 
 ---
 
