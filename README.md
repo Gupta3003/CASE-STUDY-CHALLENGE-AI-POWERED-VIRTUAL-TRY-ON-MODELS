@@ -5,6 +5,9 @@ This repository includes data preprocessing, model training, inference, evaluati
 
 ---
 
+## Project Report
+[Project Report.pdf](https://github.com/user-attachments/files/22536992/Project.Report.pdf)
+
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Dataset](#dataset)
