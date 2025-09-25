@@ -137,13 +137,48 @@ python src/evaluation.py --generated outputs/inference_samples/ --ground_truth d
 ```
 virtual-tryon-project/
 ├── data/
+│   ├── raw/
+│   │   ├── viton_hd/
+│   │   │   ├── fashion_mnist_train.csv
+│   │   │   ├── fashion_mnist_test.csv
+│   │   └── README.md
+│   ├── processed/
+│   │   ├── images/
+│   │   │   ├── train/0/, 1/, ...
+│   │   │   ├── test/0/, 1/, ...
+│   │   ├── masks/
+│   │   ├── keypoints/
+│   │   └── splits/
+│   └── README.md
 ├── models/
+│   ├── checkpoints/
+│   ├── viton_baseline.pth
+│   └── hr_vton_experiment1.pth
 ├── outputs/
+│   ├── inference_samples/
+│   ├── metrics.json
+│   └── logs/
 ├── src/
+│   ├── data_preprocessing.py
+│   ├── dataset.py
+│   ├── model_viton.py
+│   ├── train.py
+│   ├── inference.py
+│   ├── evaluation.py
+│   └── utils.py
 ├── templates/
+│   ├── index.html
+│   └── result.html
 ├── static/
+│   ├── uploads/
+│   └── styles.css
 ├── notebooks/
+│   ├── data_exploration.ipynb
+│   ├── training_experiments.ipynb
+│   └── inference_demo.ipynb
 ├── reports/
+│   ├── case_study_report.pdf
+│   └── presentation_slides.pptx
 ├── requirements.txt
 ├── README.md
 └── .gitignore
