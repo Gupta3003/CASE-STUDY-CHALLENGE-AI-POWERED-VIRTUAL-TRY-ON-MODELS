@@ -70,8 +70,6 @@ The Virtual Try-On system implemented in this project can:
 ---
 
 ## Visual Examples
-**Input Image + Generated Try-On Output**:
-
 | Front Page | Result Page |
 |-------------|-----------------|
 | <img width="1366" height="768" alt="Screenshot (1194)" src="https://github.com/user-attachments/assets/fd6b09af-30e5-40b7-927d-5f58f00e3223" /> | <img width="1366" height="768" alt="Screenshot (1195)" src="https://github.com/user-attachments/assets/3078939a-0130-4d9a-8dfd-7f17b9e22bc9" /> |
