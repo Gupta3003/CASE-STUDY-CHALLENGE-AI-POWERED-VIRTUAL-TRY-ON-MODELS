@@ -1,0 +1,31 @@
+# Byte-compiled / Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Dataset (raw/processed images)
+data/raw/
+data/processed/images/
+data/processed/masks/
+data/processed/keypoints/
+data/processed/splits/
+
+# Model checkpoints
+models/checkpoints/
+*.pth
+
+# Outputs / inference results / logs
+outputs/inference_samples/
+outputs/logs/
+
+# Reports or presentations (optional)
+reports/presentation_slides.pptx

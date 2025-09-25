@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Virtual Try-On Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Virtual Try-On Demo</h1>
+        <p>Upload a clothing image (128×128) to see the virtual try-on output.</p>
+
+        <form action="/" method="post" enctype="multipart/form-data" class="upload-form">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Upload & Try-On</button>
+        </form>
+
+        <footer>
+            <p>Virtual Try-On Project &copy; 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
