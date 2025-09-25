@@ -41,47 +41,59 @@ The Virtual Try-On system implemented in this project can:
 ```bash
 git clone https://github.com/Gupta3003/virtual-tryon-project.git
 cd virtual-tryon-project
-(Optional) Set up a virtual environment:
+```
 
-bash
-Copy code
+2. (Optional) Set up a virtual environment:
+```bash
 python -m venv venv
-source venv/bin/activate      # Linux/Mac
-venv\Scripts\activate         # Windows
-Install required packages:
+# Linux/Mac
+source venv/bin/activate
+# Windows
+venv\Scripts\activate
+```
 
-bash
-Copy code
+3. Install required packages:
+```bash
 pip install -r requirements.txt
-Install Git LFS to manage large files:
+```
 
-bash
-Copy code
+4. Install Git LFS to manage large files:
+```bash
 git lfs install
 git lfs pull
-Usage
-Data Preprocessing
-bash
-Copy code
-python src/data_preprocessing.py
-Training
-bash
-Copy code
-python src/train.py
-Inference
-bash
-Copy code
-python src/inference.py --model models/hr_vton_experiment1.pth --input data/processed/images/test/
-Evaluation
-bash
-Copy code
-python src/evaluation.py --generated outputs/inference_samples/ --ground_truth data/processed/images/test/
-Web Interface
-Open templates/index.html in a browser to upload images and view virtual try-on results.
+```
 
-Folder Structure
-swift
-Copy code
+---
+
+## Usage
+
+### Data Preprocessing
+```bash
+python src/data_preprocessing.py
+```
+
+### Training
+```bash
+python src/train.py
+```
+
+### Inference
+```bash
+python src/inference.py --model models/hr_vton_experiment1.pth --input data/processed/images/test/
+```
+
+### Evaluation
+```bash
+python src/evaluation.py --generated outputs/inference_samples/ --ground_truth data/processed/images/test/
+```
+
+### Web Interface
+- Open `templates/index.html` in a browser to upload images and view virtual try-on results.
+
+---
+
+## Folder Structure
+```
 virtual-tryon-project/
 ├── data/
 │   ├── raw/
@@ -129,24 +141,21 @@ virtual-tryon-project/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-Evaluation Metrics
-SSIM: Structural Similarity Index
-
-LPIPS: Learned Perceptual Image Patch Similarity
-
-FID: Fréchet Inception Distance
-
-Contributing
-Contributions are welcome! Open an issue or submit a pull request for improvements.
-
-License
-This project is licensed under the MIT License.
-
-yaml
-Copy code
+```
 
 ---
 
-If you want, I can also create a **version with badges, quick links to notebooks, and example outputs** so it looks more **GitHub-professional**.  
+## Evaluation Metrics
+- **SSIM**: Structural Similarity Index  
+- **LPIPS**: Learned Perceptual Image Patch Similarity  
+- **FID**: Fréchet Inception Distance  
 
-Do you want me to do that?
+---
+
+## Contributing
+Contributions are welcome! Open an issue or submit a pull request for improvements.
+
+---
+
+## License
+This project is licensed under the MIT License.
