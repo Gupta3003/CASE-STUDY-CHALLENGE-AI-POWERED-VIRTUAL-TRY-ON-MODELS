@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Try-On Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Try-On Result</h1>
+
+        <div class="images">
+            <div class="img-box">
+                <h3>Original Image</h3>
+                <img src="{{ url_for('uploaded_file', filename=input_img) }}" alt="Original Image">
+            </div>
+            <div class="img-box">
+                <h3>Generated Image</h3>
+                <img src="{{ url_for('output_file', filename=output_img) }}" alt="Try-On Output">
+            </div>
+        </div>
+
+        <a href="{{ url_for('index') }}" class="back-btn">Try Another Image</a>
+
+        <footer>
+            <p>Virtual Try-On Project &copy; 2025</p>
+        </footer>
+    </div>
+</body>
+</html>

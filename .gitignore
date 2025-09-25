@@ -1,0 +1,24 @@
+# Byte-compiled / Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+
+# Outputs / inference results / logs
+outputs/inference_samples/
+
+# Dataset (raw/processed images)
+data/raw/
+data/processed/images/
+data/processed/masks/
+data/processed/keypoints/
+data/processed/splits/
+
+# Model checkpoints
+models/checkpoints/
+*.pth
+
+
